@@ -11,8 +11,13 @@ import Link from "next/link"
 // import { AuthContext } from "@/utils/authContext";
 // import { useContext } from "react";
 
+interface Page {
+  name: string;
+  href: string;
+}
+
 export default function Navbar() {
-    const pages = [
+    const pages: Page[] = [
         {name : "Home", href: "/"},
         {name : "About", href: "/about"},
         {name : "Contact", href: "/contact"},
@@ -24,7 +29,7 @@ export default function Navbar() {
       
       {/* Logo  */}
       <Link href="/" className="mr-6" prefetch={false}>
-        <Logo className="h-6 w-6" />
+        <Logo />
       </Link>
 
         <nav className="ml-auto hidden lg:flex gap-2">
@@ -46,7 +51,7 @@ export default function Navbar() {
         {/* Mobile menu Icon  */}
         <SheetTrigger asChild>
           <Button variant="outline" size="icon" className="lg:hidden ml-auto">
-            <MenuIcon className="h-6 w-6" />
+            <MenuIcon />
           </Button>
         </SheetTrigger>
 
@@ -54,7 +59,7 @@ export default function Navbar() {
         <SheetContent side="left">
           {/* Menu title  */}
           <Link href="#" className="mr-6 lg:flex" prefetch={false}>
-            <Logo className="h-6 w-6" />
+            <Logo />
           </Link>
           {/* Menu links  */}
          <div className="grid gap-2 py-6">
@@ -75,10 +80,9 @@ export default function Navbar() {
   )
 }
 
-function MenuIcon(props) {
+function MenuIcon() {
   return (
     <svg
-      {...props}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -96,8 +100,8 @@ function MenuIcon(props) {
   )
 }
 
-function Logo(props) {
+function Logo() {
   return (
-    <h2 className="text-2xl">Muntasir</h2>
+    <h2 className="text-2xl h-6 w-6">Muntasir</h2>
   )
 }
