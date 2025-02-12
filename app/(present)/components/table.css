@@ -1,0 +1,19 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    /* font-size: 14px; */
+    /* style={{boxShadow: '0 0.5px 0 rgba(255, 255, 255, 0.5)' }} */
+    box-shadow: '0 4px 0 rgba(255, 255, 255, 0.5)';
+    border: 2px solid #25252b;
+  }
+  
+td, th {
+/* border: 1px solid #dddddd; */
+text-align: center;
+padding: 4px;
+}
+
+tr:nth-child(even) {
+background-color: #25252b;
+}

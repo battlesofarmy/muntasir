@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import AuthProvider from "@/utils/AuthProvider";
 import Footer from "@/components/Footer";
 
 // Load fonts
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["400"], // Load specific font weights
+  weight: ["300"], // Load specific font weights
   variable: "--font-inter",
 });
 
@@ -28,13 +29,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body
         className={`${inter.variable} ${poppins.variable} antialiased`}
       >
-        <Navbar/>
-        {children}
-        <Footer/>
+        <AuthProvider>
+          <Navbar/>
+          {children}
+          <Footer/>
+        </AuthProvider>
       </body>
     </html>
   );
