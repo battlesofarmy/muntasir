@@ -160,7 +160,7 @@ export default function ClickTracker() {
          {
              students.length===0 && 
              <div className="flex flex-col py-10">
-                <Skeleton className="h-[50vh] w-full rounded-xl bg-primary" />
+                <Skeleton className="h-[50vh] w-[100wh] rounded-xl bg-primary" />
             </div>
          }
 

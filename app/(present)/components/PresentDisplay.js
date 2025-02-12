@@ -1,12 +1,12 @@
 "use client";  // To indicate that this component should only run on the client
 
 import { useEffect, useState } from "react";
-import axios from "axios";
 import '../components/table.css';
 
 import { FaRegCheckCircle } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
 import { Skeleton } from "@/components/ui/skeleton";
+import api from "@/utils/AxiosConfig";
 
 export default function PresentDisplay({ title, presents }) {
   const [students, setStudents] = useState([]);
@@ -15,7 +15,7 @@ export default function PresentDisplay({ title, presents }) {
     // Fetch students data when the component mounts
     const fetchData = async () => {
       try {
-        const stuRes = await axios.get("https://present.muntasir3301.xyz/student");
+        const stuRes = await api.get("/student");
         setStudents(stuRes.data);  // Set the fetched students data into state
       } catch (error) {
         console.error("Error fetching students data:", error);
