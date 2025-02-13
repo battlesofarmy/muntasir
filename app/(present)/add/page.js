@@ -24,7 +24,7 @@ export default function ClickTracker() {
         setStudents(res.data); // Set fetched students
         setClickCounts(Array(res.data.length).fill("a")); // Initialize attendance as "a"
       })
-      .catch((err) => console.error("Error fetching students:", err));
+      .catch((err) => console.error("Error fetching students. You might not a logged user!", err));
   }, []);
 
   // Handle click to mark attendance
