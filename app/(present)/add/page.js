@@ -16,7 +16,6 @@ export default function ClickTracker() {
   const [courseName, setCourseName] = useState("");
 
 
-
   // Fetch students from the API
   useEffect(() => {
     api.get("/student")

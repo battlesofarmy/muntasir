@@ -1,6 +1,5 @@
-"use client";  // To indicate that this component should only run on the client
 
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import '../components/table.css';
 
 import { FaRegCheckCircle } from "react-icons/fa";
@@ -8,22 +7,37 @@ import { RxCross2 } from "react-icons/rx";
 import { Skeleton } from "@/components/ui/skeleton";
 import api from "@/utils/AxiosConfig";
 
-export default function PresentDisplay({ title, presents }) {
-  const [students, setStudents] = useState([]);
+export default async function PresentDisplay({ title, presents }) {
 
-  useEffect(() => {
-    // Fetch students data when the component mounts
-    const fetchData = async () => {
-      try {
-        const stuRes = await api.get("/student");
-        setStudents(stuRes.data);  // Set the fetched students data into state
-      } catch (error) {
-        console.error("Error fetching students data:", error);
-      }
-    };
 
-    fetchData();
-  }, []);  // Empty dependency array ensures this runs only once when the component mounts
+  let students =[];
+  try{
+    const res = await api.get(`/student`);
+    students = res.data;
+    
+  }catch(err){
+    console.log(err)
+  }
+  console.log(students);
+
+
+
+  // const [students, setStudents] = useState([]);
+
+
+  // useEffect(() => {
+  //   // Fetch students data when the component mounts
+  //   const fetchData = async () => {
+  //     try {
+  //       const stuRes = await api.get("/student");
+  //       setStudents(stuRes.data);  // Set the fetched students data into state
+  //     } catch (error) {
+  //       console.error("Error fetching students data:", error);
+  //     }
+  //   };
+  //   fetchData();
+  // }, []);  // Empty dependency array ensures this runs only once when the component mounts
+  
 
   return (
     <section className="py-10">
