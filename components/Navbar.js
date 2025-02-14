@@ -87,22 +87,6 @@ export default function Navbar() {
               <FaRegUserCircle className="mr-1.5 text-base"/>Login
             </Link>
           }
-
-
-
-
-        {/* {
-            pages?.map(ele=>
-            <Link
-                key={ele.name}
-                href={ele.href}
-                className="group text-sm inline-flex h-9 w-max items-center justify-center rounded-md border px-4 py-2 font-medium transition-colors hover:bg-gray-100  focus:bg-gray-900 focus:text-gray-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-[#131316] dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
-                prefetch={false}
-            >
-            {ele.name}
-            </Link>
-            )
-        } */}
        </nav>
 
      <Sheet>
@@ -128,7 +112,50 @@ export default function Navbar() {
                 </Link>
             )
           }
+
+
+
+
+          {/* Mobile links :  */}
+          <Link href={'/'}
+                className="group text-sm inline-flex h-9 w-max items-center justify-center rounded-md border px-4 py-2 font-medium transition-colors hover:bg-gray-100  focus:bg-gray-900 focus:text-gray-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50  dark:hover:bg-[#131316] dark:hover:text-gray-50 dark:focus:bg-[#131316] dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
+                prefetch={false} >
+              <FaHome className="mr-1.5 text-base"/>Home
+            </Link>
+
+            <Link href={'/todo'}
+                className="group text-sm inline-flex h-9 w-max items-center justify-center rounded-md border px-4 py-2 font-medium transition-colors hover:bg-gray-100  focus:bg-gray-900 focus:text-gray-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:hover:bg-[#131316] dark:hover:text-gray-50 dark:focus:bg-[#131316] dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
+                prefetch={false} >
+              <LuListTodo className="mr-1.5 text-base"/>ToDo
+            </Link>
+
+
+
+            <Link href={'#'}
+                className="group text-sm inline-flex h-9 w-max items-center justify-center rounded-md border px-4 py-2 font-medium transition-colors hover:bg-gray-100  focus:bg-gray-900 focus:text-gray-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:hover:bg-[#131316] dark:hover:text-gray-50 dark:focus:bg-[#131316] dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
+                prefetch={false} >
+              <MdCoPresent className="mr-1.5 text-base"/>
+               <Present/>
+            </Link>
+          {
+            user?
+            // johfa
+            <>
+              <Profile/>
+            </>
+            :
+            <Link href={'/login'}
+                className="group text-sm inline-flex h-9 w-max items-center justify-center rounded-md border px-4 py-2 font-medium transition-colors hover:bg-gray-100  focus:bg-gray-900 focus:text-gray-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:hover:bg-[#131316] dark:hover:text-gray-50 dark:focus:bg-[#131316] dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
+                prefetch={false} >
+              <FaRegUserCircle className="mr-1.5 text-base"/>Login
+            </Link>
+          }
+
+
           </div>
+
+
+
         </SheetContent>
       </Sheet>
 
