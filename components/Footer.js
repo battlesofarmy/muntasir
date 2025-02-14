@@ -11,9 +11,9 @@ function Footer() {
             &copy; <a target='_blank' href="https://dev.muntasir3301.xyz/"> Developed By 💝 Muntasir Ahmed</a>
           </p>
           <div className="order-1 md:order-2">
-            <span className="px-2">  <Link href={'/about'}>About Us</Link> </span>
-            <span className="px-2 border-l">  <Link href={'/contact'}>Contact Us</Link> </span>
-            <span className="px-2 border-l"> <Link href={'/career'}>Career</Link> </span>
+            <span className="px-2">  <Link href={'/'}>About Us</Link> </span>
+            <span className="px-2 border-l">  <Link href={'/'}>Contact Us</Link> </span>
+            <span className="px-2 border-l"> <Link href={'/'}>Career</Link> </span>
           </div>
         </div>
       </div>
