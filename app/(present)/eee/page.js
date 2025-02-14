@@ -1,6 +1,8 @@
 import PresentDisplay from "../components/PresentDisplay";
 import api from "@/utils/AxiosConfig";
 
+export const revalidate = 0; // This disables caching and sets "Cache-Control: no-store"
+
 export default async function EEEpresent() {
 
   let eeepresent =[];
