@@ -1,7 +1,4 @@
-
-// import { useEffect, useState } from "react";
 import '../components/table.css';
-
 import { FaRegCheckCircle } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -14,30 +11,9 @@ export default async function PresentDisplay({ title, presents }) {
   try{
     const res = await api.get(`/student`);
     students = res.data;
-    
   }catch(err){
     console.log(err)
   }
-  console.log(students);
-
-
-
-  // const [students, setStudents] = useState([]);
-
-
-  // useEffect(() => {
-  //   // Fetch students data when the component mounts
-  //   const fetchData = async () => {
-  //     try {
-  //       const stuRes = await api.get("/student");
-  //       setStudents(stuRes.data);  // Set the fetched students data into state
-  //     } catch (error) {
-  //       console.error("Error fetching students data:", error);
-  //     }
-  //   };
-  //   fetchData();
-  // }, []);  // Empty dependency array ensures this runs only once when the component mounts
-  
 
   return (
     <section className="py-10">
@@ -111,16 +87,14 @@ export default async function PresentDisplay({ title, presents }) {
                 </td>
               </tr>
             ))}
-
-
           </tbody>
         </table>
-        {
-             students.length===0 && 
-             <div className="flex flex-col py-10">
-                <Skeleton className="h-[50vh] w-full rounded-xl bg-primary" />
+          {
+            students.length===0 && 
+            <div className="flex flex-col py-10">
+              <Skeleton className="h-[50vh] w-full rounded-xl bg-primary" />
             </div>
-         }
+          }
       </div>
     </section>
   );
