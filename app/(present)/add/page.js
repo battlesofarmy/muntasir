@@ -57,11 +57,11 @@ export default function ClickTracker() {
     setErrorMsg("");
     setSuccessMsg("");
 
-    if(!user?.email){
-      setErrorMsg("Login as a Admin to submit Attendence");
-      console.log(user)
-      return;
-    }
+    // if(!user?.email){
+    //   setErrorMsg("Login as a Admin to submit Attendence");
+    //   console.log(user)
+    //   return;
+    // }
 
     if(!courseName){
       setErrorMsg("Select a Course Name");
