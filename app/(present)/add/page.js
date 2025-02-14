@@ -5,7 +5,7 @@ import { FaRegCalendarDays } from "react-icons/fa6";
 import { Skeleton } from "@/components/ui/skeleton"
 import '../components/table.css';
 import api from "@/utils/AxiosConfig";
-import { AuthContext } from "@/utils/AuthProvider";
+// import { AuthContext } from "@/utils/AuthProvider";
 
 export default function ClickTracker() {
   const [students, setStudents] = useState([]); // Initialize as an empty array
@@ -15,7 +15,7 @@ export default function ClickTracker() {
   const [successMsg, setSuccessMsg] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
   const [courseName, setCourseName] = useState("");
-  const {user} = useState(AuthContext);
+  // const {user} = useState(AuthContext);
 
 
   // Fetch students from the API
