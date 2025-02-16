@@ -14,6 +14,8 @@ import { MdCoPresent } from "react-icons/md";
 import { FaRegUserCircle } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "@/utils/AuthProvider";
+import Image from 'next/image'
+import logo from '@/public/mun-logo.png'
 
 import Profile from './Profile'
 import Present from "./Present";
@@ -187,6 +189,7 @@ function MenuIcon() {
 
 function Logo() {
   return (
-    <h2 className="text-2xl text-white">Muntasir Ahmed</h2>
+    <Image width={200} alt='logo' src={logo} />
+    // <h2 className="text-2xl text-white">Muntasir Ahmed fahim</h2>
   )
 }
