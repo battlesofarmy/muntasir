@@ -1,7 +1,3 @@
-// npx shadcn@latest init
-// npx shadcn@latest add sheet
-// npx shadcn@latest add button
-// Add tailwind container
 
 "use client"
 
@@ -16,21 +12,11 @@ import { useContext } from "react";
 import { AuthContext } from "@/utils/AuthProvider";
 import Image from 'next/image'
 import logo from '@/public/mun-logo.png'
+import { FaArrowTrendUp } from "react-icons/fa6";
 
 import Profile from './Profile'
 import Present from "./Present";
 
-// import { AuthContext } from "@/utils/authContext";
-// import { useContext } from "react";
-
-// interface Page {
-//   name: string;
-//   href: string;
-// }
-
-// interface AuthContextType {
-//   user: UserType | null;
-// }
 
 export default function Navbar() {
     const pages = [
@@ -63,6 +49,18 @@ export default function Navbar() {
                 prefetch={false} >
               <LuListTodo className="mr-1.5 text-base"/>ToDo
             </Link>
+
+
+
+          {
+            user &&
+            <Link href={'/todo'}
+                className="group text-sm inline-flex h-9 w-max items-center justify-center rounded-md border px-4 py-2 font-medium transition-colors hover:bg-gray-100  focus:bg-gray-900 focus:text-gray-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:hover:bg-[#131316] dark:hover:text-gray-50 dark:focus:bg-[#131316] dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
+                prefetch={false} >
+              <FaArrowTrendUp className="mr-1.5 text-base"/>Learning
+            </Link>
+          }
+          
 
 
 
@@ -115,9 +113,6 @@ export default function Navbar() {
             )
           }
 
-
-
-
           {/* Mobile links :  */}
           <Link href={'/'}
                 className="group text-sm inline-flex h-9 w-max items-center justify-center rounded-md border px-4 py-2 font-medium transition-colors hover:bg-gray-100  focus:bg-gray-900 focus:text-gray-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50  dark:hover:bg-[#131316] dark:hover:text-gray-50 dark:focus:bg-[#131316] dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
@@ -130,6 +125,16 @@ export default function Navbar() {
                 prefetch={false} >
               <LuListTodo className="mr-1.5 text-base"/>ToDo
             </Link>
+
+
+          {
+            user &&
+             <Link href={'/todo'}
+                className="group text-sm inline-flex h-9 w-max items-center justify-center rounded-md border px-4 py-2 font-medium transition-colors hover:bg-gray-100  focus:bg-gray-900 focus:text-gray-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:hover:bg-[#131316] dark:hover:text-gray-50 dark:focus:bg-[#131316] dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
+                prefetch={false} >
+              <LuListTodo className="mr-1.5 text-base"/>Learn
+            </Link>
+          }
 
 
 
@@ -152,7 +157,6 @@ export default function Navbar() {
               <FaRegUserCircle className="mr-1.5 text-base"/>Login
             </Link>
           }
-
 
           </div>
 

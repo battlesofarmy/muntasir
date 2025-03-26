@@ -17,11 +17,6 @@ h3 {
   font-weight: 400;
 }
 
-.johfa{
-background: rgba(139,92,246,.2) rgba(217, 70, 239, .2)
-}
-
-
 @layer base {
   :root {
     --background: 0 0% 100%;
